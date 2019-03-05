@@ -1,0 +1,108 @@
+.chessboard {
+  width: 450px;
+  height: 450px;
+  border: 25px solid #333;
+  vertical-align: middle;
+  horiz-align: center;
+}
+
+.black {
+  float: left;
+  width: 50px;
+  height: 50px;
+  background-color: #999;
+  font-size:35px;
+  text-align:center;
+  display: table-cell;
+  vertical-align:middle;
+}
+
+.white {
+  float: left;
+  width: 50px;
+  height: 50px;
+  background-color: #cbcbcb;
+  font-size:35px;
+  text-align:center;
+  display: table-cell;
+  vertical-align:middle;
+}
+
+.LoggedIn {
+  text-align: left;
+  background-color: #274257;
+  color: white;
+  font-size: 40px;
+}
+
+.button-box {
+  text-align:left;
+}
+
+.column {
+  float: left;
+  width: 30%;
+  margin: 50px;
+}
+
+.last-move-scroll {
+   position: relative;
+   height: 200px;
+   margin-top: .5rem;
+   overflow: auto;
+ }
+
+.last-move-scroll {
+  position: relative;
+  height: 200px;
+  margin-top: .5rem;
+  overflow: auto;
+}
+
+.row{
+  width: 95%;
+  /*margin-left: 10px;*/
+  align-items: center;
+}
+
+th {
+  text-align: center;
+}
+
+.table-fixed tbody {
+  height: 200px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+  display: block;
+}
+.table-fixed tr:after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  clear: both;
+  text-align: center;
+}
+.table-fixed tbody td,
+.table-fixed thead > tr > th {
+  float: left;
+  text-align: center;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td {
+  font-size: .9em;
+  font-weight: 400;
+  border-bottom: 0;
+  letter-spacing: 1px;
+  vertical-align: top;
+  padding: 8px;
+  background: #7EB5D6;
+  text-transform: uppercase;
+  color: #ffffff;
+}

@@ -1,0 +1,119 @@
+<div class="LoggedIn"> You are now playing as:   {{player.playerName}}</div>
+<div class="container-fluid">
+  <div class="row row fluid">
+
+    <div class="col-md-6 col-md-push-6">
+      <div class="container-fluid">
+        <div>
+          <h5 style="">Game id: {{lastgame.id}}</h5>
+        </div>
+        <div class="chessboard">
+          <button [id]="'button' + tile.id" (click)="onclick(tile.id)"
+                  *ngFor="let tile of tilelist" [innerHTML]="getPicture(tile.id)" ngClass="{{colorPicker()}}">
+          </button>
+          <div [innerHTML]="errorMessage" style="width: 30%; float: bottom;" class="alert alert-warning" role="alert"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-md-pull-6">
+      <div class="container-fluid">
+        <br>
+        <br>
+        <div class="button-box">
+          <div class="col-xs-6">
+            <input type="text" class="form-control" placeholder="{{player.playerName}}" aria-label="Recipient's username" aria-describedby="button-addon2" value="{{player.playerName}}" #playername>
+          </div>
+          <div class="col-xs-6">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary btn-block" type="button" id="button-addon2" (click)="changePlayerName(playername.value)">Set name</button>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div>
+          <button class="btn btn-primary btn-block" (click)="resetBoard()">Start new spelletje!</button>
+        </div>
+
+        <div>
+          <button class="btn btn-primary btn-block" routerLink="/gamedetails">Ga naar gameDetails</button>
+        </div>
+
+        <div>
+          <button class="btn btn-primary btn-block" (click)="logout()" routerLink="">Logout</button>
+        </div>
+
+        <br>
+
+        <!--<div [hidden]="">-->
+        <div class="container-fluid">
+          <!--<label for="promotion"></label>-->
+          <div class="col-xs-6">
+            <select class="form-control" id="promotion" name="promotion" #promotion>
+              <option value="Queen">Queen</option>
+              <option value="Bishop">Bishop</option>
+              <option value="Rook">Rook</option>
+              <option value="Knight">Knight</option>
+            </select>
+          </div>
+          <button class="btn btn-secondary col-xs-6" (click)="getPromotion(promotion.value)">getPromotion</button>
+        </div>
+
+        <br>
+
+        <h4>Move List</h4>
+        <table class="table table-fixed">
+          <thead>
+          <tr>
+            <th class="col-xs-1">
+              zet
+            </th>
+            <th class="col-xs-5">
+              van
+            </th>
+            <th class="col-xs-3">
+              naar
+            </th>
+            <th class="col-xs-3" style="text-align: center;">
+              door
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let gamehistory of gamehistorylist">
+            <td class="col-xs-1">
+              {{gamehistory.countPlace}}
+            </td>
+            <td class="col-xs-5">
+              {{gamehistory.van}}
+            </td>
+            <td class="col-xs-3">
+              {{gamehistory.naar}}
+            </td>
+            <td class="col-xs-3" >
+              {{gamehistory.vanColor}}
+            </td>
+          </tr>
+          <!--<tr>-->
+            <!--<td class="col-xs-1">1</td>-->
+            <!--<td class="col-xs-5">George Washington</td>-->
+            <!--<td class="col-xs-3">two</td>-->
+            <!--<td class="col-xs-3">1789-1797</td>-->
+          <!--</tr>-->
+          <!--<tr>-->
+            <!--<td class="col-xs-1">2</td>-->
+            <!--<td class="col-xs-5">John Adams</td>-->
+            <!--<td class="col-xs-3">one</td>-->
+            <!--<td class="col-xs-3">1797-1801</td>-->
+          <!--</tr>-->
+          </tbody>
+        </table>
+
+
+      </div>
+    </div>
+  </div>
+</div>

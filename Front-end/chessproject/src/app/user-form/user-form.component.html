@@ -1,0 +1,44 @@
+<h3>Meld je hier aan voor ChessOnline</h3>
+
+<div class="form-group">
+  <div type="text"  [innerHTML]="errorMessage" class="text" style="color: red; font-size: 20px;" role="alert"></div>
+  <div type="text"  [innerHTML]="goodMessage" class="text" style="color: green;  font-size: 20px;" role="alert"></div>
+  <form [formGroup]="userForm" (ngSubmit)="savePlayer($event)">
+
+  <label> Gebruikersnaam:</label>
+  <input formControlName="username"  class="form-control" type="email">
+    <br>
+  <label> Wachtwoord: </label>
+  <input formControlName="password" class="form-control" type="password">
+    <br>
+
+  <input class="btn btn-lg btn-primary btn-block" (submit)="$event" type="submit" value="Meld je aan!"/>
+  </form>
+    </div>
+
+
+
+
+<!--<div [hidden]="" [innerHTML]="errorMessage" class="alert alert-warning" role="alert"></div>-->
+  <!--<form [formGroup]="userForm" (ngSubmit)="savePlayer($event)">-->
+        <!--<label> Username:</label>-->
+      <!--<div class="col-75">-->
+        <!--<input formControlName="username" type="email">-->
+      <!--</div>-->
+    <!--<div class="row">-->
+      <!--<div class="col-25">-->
+        <!--<label> Password: </label>-->
+      <!--</div>-->
+      <!--<div class="col-75">-->
+        <!--<input formControlName="password" type="password">-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+      <!--<input (submit)="$event" type="submit"/>-->
+    <!--</div>-->
+  <!--</form>-->
+<!--<br>-->
+<!--<br>-->
+<!--<div>-->
+  <!--<button class="btn" style="float: right; margin-right: 15%;" routerLink="">Ga terug naar inlogpagina</button>-->
+<!--</div>-->
